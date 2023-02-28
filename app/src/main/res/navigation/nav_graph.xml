@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/mainActivity">
+    <activity
+        android:id="@+id/mainActivity"
+        android:name="com.example.q3_capstone.MainActivity"
+        android:label="activity_main"
+        tools:layout="@layout/activity_main" >
+        <argument
+            android:name="carScore"
+            app:argType="integer"
+            android:defaultValue="0" />
+    </activity>
+    <fragment
+        android:id="@+id/home_screen"
+        android:name="com.example.q3_capstone.HomeFragment"
+        android:label="home_screen" >
+        <action
+            android:id="@+id/action_home_screen_to_potato"
+            app:destination="@id/potato" />
+        <action
+            android:id="@+id/action_home_screen_to_wheat"
+            app:destination="@id/wheat" />
+        <action
+            android:id="@+id/action_home_screen_to_carrot"
+            app:destination="@id/carrot" />
+    </fragment>
+    <fragment
+        android:id="@+id/potato"
+        android:name="com.example.q3_capstone.potato"
+        android:label="fragment_potato"
+        tools:layout="@layout/fragment_potato" >
+        <action
+            android:id="@+id/action_potato_to_home_screen"
+            app:destination="@id/home_screen" />
+    </fragment>
+    <fragment
+        android:id="@+id/wheat"
+        android:name="com.example.q3_capstone.wheat"
+        android:label="fragment_wheat"
+        tools:layout="@layout/fragment_wheat" >
+        <action
+            android:id="@+id/action_wheat_to_home_screen"
+            app:destination="@id/home_screen" />
+    </fragment>
+    <fragment
+        android:id="@+id/carrot"
+        android:name="com.example.q3_capstone.carrot"
+        android:label="fragment_carrot"
+        tools:layout="@layout/fragment_carrot" >
+        <action
+            android:id="@+id/action_carrot_to_home_screen"
+            app:destination="@id/home_screen" />
+        <argument android:name="carScore"
+            app:argType="integer"
+            android:defaultValue="0" />
+    </fragment>
+</navigation>
